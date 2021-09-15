@@ -1,0 +1,11 @@
+version: "3.3"
+services:
+  choco-opc-sim:
+    image: choco-opc-plc:1.0.0
+    network_mode: host
+    #Change the command here and substitute choco_server with example file name from custom folder as required 
+    command: node /demo-opc-plc/node-opcua/packages/node-opcua-samples/bin/custom/choco_server
+    volumes:
+       - ./custom:/demo-opc-plc/node-opcua/packages/node-opcua-samples/bin/custom
+    container_name: choco-server-demo
+    restart: unless-stopped

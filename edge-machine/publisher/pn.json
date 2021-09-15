@@ -1,0 +1,22 @@
+[
+    {
+        "EndpointUrl": "opc.tcp://127.0.0.1:12000/AzureVM/ChocolateFactoryServer",
+        "UseSecurity": false,
+        "OpcNodes": [
+            {
+                "Id": "ns=1;s=Roasting.RoastingTime",
+                "OpcSamplingInterval": 60000,
+                "OpcPublishingInterval": 30000,
+                "HeartbeatInterval": 60000,
+                "SkipFirst": true
+            },
+            {
+                "Id": "ns=1;s=Roasting.PowerUsage",
+                "OpcSamplingInterval": 60000,
+                "OpcPublishingInterval": 30000,
+                "HeartbeatInterval": 60000,
+                "SkipFirst": true
+            }
+        ]
+    }
+]
