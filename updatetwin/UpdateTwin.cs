@@ -15,14 +15,10 @@ namespace UpdateTwin
     // This class processes telemetry events from IoT Hub related to chocolate factory demo server
     public static class UpdateTwin
     {
-        private static readonly string configurationFile = Environment.GetEnvironmentVariable("CONFIGURATION_FILENAME");
-
         [FunctionName("UpdateTwin")]
         public static async Task Run([EventGridTrigger] EventGridEvent eventGridEvent, ILogger log,ExecutionContext context)
         {
             log.LogInformation("Message from IotHub received via EventGrid");
-
-            log.LogInformation($"Reading from configuration file {configurationFile}");
 
             DigitalTwinsClient client = Utilities.getAzureDigitalTwinClient(log);
 
